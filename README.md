@@ -12,7 +12,7 @@ from mcp23017 import *
 
 
 i2c = busio.I2C(board.SCL, board.SDA)
-expander = MCP23017(i2c)
+expander = MCP23017(i2c, address=0x20)
 
 led = expander.gpio(GPB0)
 led.direction = digitalio.Direction.OUTPUT
